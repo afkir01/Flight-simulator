@@ -1,4 +1,7 @@
 package com.flightsimulator.simulator.repository;
 
-public class AirplaneRepository {
+import com.flightsimulator.simulator.model.Airplane;
+import org.springframework.data.repository.CrudRepository;
+
+public interface AirplaneRepository extends CrudRepository <Airplane, Long> {
 }
