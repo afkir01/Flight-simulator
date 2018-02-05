@@ -18,7 +18,7 @@ public class AirplaneController {
     }
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public Airplane createFlight(@RequestBody Airplane airplane){
+    public Airplane createAirplane(@RequestBody Airplane airplane){
         //check if it's a new flight
         this.airplaneRepository.save(airplane);
         return airplane;

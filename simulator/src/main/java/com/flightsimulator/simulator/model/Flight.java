@@ -36,7 +36,7 @@ public class Flight {
         return flightNumber;
     }
 
-    public void setFlightNumber(String  flightNumber) {
+    public void setFlightNumber(String flightNumber) {
         this.flightNumber = flightNumber;
     }
 

@@ -12,12 +12,12 @@ public class Airport {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String name;
-    private Long totalAirplanes;
+    private long totalAirplanes;
 
 
     public Airport(){ }
 
-    public Airport(Long flightNumber, String flightOrigin, String flightDestination) {
+    public Airport(Long id, String name, Long totalAirplanes) {
         this.id = id;
         this.name = name;
         this.totalAirplanes = totalAirplanes;

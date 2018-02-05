@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel - Guests</title>
+    <title>Simulator</title>
 
     <!-- JQuery -->
     <script
@@ -12,7 +12,7 @@
             crossorigin="anonymous"></script>
 
     <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href="/css/bootstrap-minty.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-solar.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
     <!-- Toastr -->
@@ -32,7 +32,7 @@
     <script src="/js/libraries/bootbox.min.js"></script>
 
     <!-- Toastr Config -->
-    <script src="/js/toastr.js"></script>
+    <script src="/toastr.js"></script>
     <script src="/js/libraries/underscore-min.js"></script>
 
     <!-- Helpers -->
@@ -55,13 +55,13 @@
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/airplanes.html">Airports</a>
+                <a class="nav-link" href="/airplanes.html">Airplanes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/airports.html">Flights</a>
+                <a class="nav-link" href="/airports.html">Airports</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/flights.html">Airplanes</a>
+                <a class="nav-link" href="/flights.html">Flights</a>
             </li>
         </ul>
     </div>
@@ -83,7 +83,6 @@
             <table class="table table-bordered" id="airplanesTable">
                 <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Type</th>
                     <th>Name</th>
                 </tr>
@@ -102,14 +101,14 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="guestForm">
+                <form id="airplaneForm">
                     <div class="form-group">
-                        <label for="firstName">Name</label>
-                        <input id="firstName" class="form-control" name="name" type="text" required>
+                        <label for="name">Name</label>
+                        <input id="name" class="form-control" name="name" type="text" required>
                     </div>
                     <div class="form-group">
-                        <label for="lastName">Type</label>
-                        <input id="lastName" class="form-control" name="type" type="text" required>
+                        <label for="type">Type</label>
+                        <input id="type" class="form-control" name="type" type="text" required>
                     </div>
                     <input type="submit" id="airplaneSubmit" style="display: none;">
                 </form>
@@ -122,4 +121,4 @@
     </div>
 </div>
 </body>
-</html
+</html>

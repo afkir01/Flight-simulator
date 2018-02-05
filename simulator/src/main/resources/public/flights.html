@@ -2,9 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulator</title>
+
+    <!-- JQuery -->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="/css/bootstrap-solar.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+    <!-- Toastr -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/cb275ec490.js"></script>
+
+    <!-- Bootbox -->
+    <script src="/js/libraries/bootbox.min.js"></script>
+
+    <!-- Toastr Config -->
+    <script src="/toastr.js"></script>
+    <script src="/js/libraries/underscore-min.js"></script>
+
+    <!-- Helpers -->
+    <script src="/js/helpers/ajax.js"></script>
+    <script src="/js/helpers/bootbox.js"></script>
+    <script src="/js/helpers/dataTables.js"></script>
+
+    <script src="/js/flights.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-10">
+    <a class="navbar-brand" href="#">Flights</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/flights.html">Flights</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/airplanes.html">Airplanes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/airports.html">Airports</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container mt-5">
+    <div class=“row”>
+        <div class=“col”>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-primary" id="create">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-primary controls" id="edit" disabled>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="btn btn-danger controls" id="remove" disabled>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </div>
+            <table class="table table-bordered" id="flightsTable">
+                <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Flight Origin</th>
+                    <th>Flight Destination</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="flightModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add a Flight</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="flightForm">
+                    <div class="form-group">
+                        <label for="flightNumber">Flight Number</label>
+                        <input id="flightNumber" class="form-control" name="name" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flightOrigin">Flight Origin</label>
+                        <input id="flightOrigin" class="form-control" name="type" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="flightDestination">Flight Destination</label>
+                        <input id="flightDestination" class="form-control" name="type" type="text" required>
+                    </div>
+                    <input type="submit" id="flightSubmit" style="display: none;">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="$('#flightSubmit').click();">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
